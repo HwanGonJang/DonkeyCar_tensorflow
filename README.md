@@ -38,6 +38,11 @@
 myconfig.py를 아래 명령어로 실행 후 자동차 속도에 맞춰 캘리브래이션.
  nano myconfig.py
  각 PWM값을 수정하기.
+ 
+ ### 조이스틱 연결
+    sudo apt-get install joystick
+    ls /dev/input/js0
+    sudo jstest /dev/input/js0
    
 ## Drive your car     
  아래 명령어로 동키카 드라이빙 파일 실행. 
@@ -45,6 +50,19 @@ myconfig.py를 아래 명령어로 실행 후 자동차 속도에 맞춰 캘리�
    python manage.py drive
  
  https://<192.168.1.n>:8887 주소창에 입력하면 manage.py에서 실행하는 서버로 이동
+ <img width="500" src="https://user-images.githubusercontent.com/33739448/102477548-d86e0a00-409f-11eb-9249-db95e340cc3b.jpg">
+ 
+ 실시간 웹캠으로 동키카 학습시작.
+ 
+ ## Train an autopilot with Keras
+ 약 10바퀴 정도 같은 루트를 돌리면 manage.py에서 자동으로 사진과 각각의 JSON파일을 저장.
+ 저장된 tub_11_27(tub + 날짜) 사진과 json파일을 mobaXterm 프로그램으로 직접 가져와서 호스트 pc로 학습.     
+ 
+      python ~/mycar/manage.py train --tub <tub folder names comma separated> --model ./models/mypilot.h5
+ 학습된 파일을 다시 라즈베리파이로 복사.
+ 
+ ## Get Driving
+ 다시 manage.py 실행 후 서버 페이지에서 autopilot으로 모드를 변경하면 학습된 루트를 동키카 혼자 계속 도는 결과가 나옵니다.
 
      
 
