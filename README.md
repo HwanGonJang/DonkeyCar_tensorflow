@@ -55,7 +55,7 @@ myconfig.py를 아래 명령어로 실행 후 자동차 속도에 맞춰 캘리�
  실시간 웹캠으로 동키카 학습시작.
  
  ## Train an autopilot with Keras
- 약 10바퀴 정도 같은 루트를 돌리면 manage.py에서 자동으로 사진과 각각의 JSON파일을 저장.
+ 약 10바퀴 정도 같은 루트를 돌리면 manage.py에서 자동으로 사진과 각각의 JSON파일을 저장.      
  저장된 tub_11_27(tub + 날짜) 사진과 json파일을 mobaXterm 프로그램으로 직접 가져와서 호스트 pc로 학습.     
  
       python ~/mycar/manage.py train --tub <tub folder names comma separated> --model ./models/mypilot.h5
